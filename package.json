@@ -27,8 +27,8 @@
     "vue-chartjs": "^3.4.0",
     "vue-i18n": "^8.0.0",
     "vue2-transitions": "^0.2.3",
-    "vue": "^2.0.8",
-    "vue-template-compiler": "^2.0.8"
+    "vue": "^3.4.0",
+    "vue-template-compiler": "^3.4.0"
   },
   "devDependencies": {
     "babel-plugin-component": "^1.1.1",

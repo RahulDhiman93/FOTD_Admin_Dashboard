@@ -204,7 +204,6 @@ export default {
   components: {
     LineChart,
     BarChart,
-    TaskList,
     [Table.name]: Table,
     [TableColumn.name]: TableColumn
   },
@@ -364,10 +363,18 @@ export default {
       this.$refs.bigChart.updateGradients(chartData);
       this.bigLineChart.chartData = chartData;
       this.bigLineChart.activeIndex = index;
+    },
+    fetchData() {
+      fetch(config.BASE_URL + "getAllUsers")
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
     }
   },
   mounted () {
     this.initBigChart(0);
+    this.fetchData();
   }
 }
 </script>

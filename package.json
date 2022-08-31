@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-black-dashboard",
+  "name": "fotd-dashboard",
   "version": "1.0.0",
-  "description": "Nuxt Black Dashboard",
-  "author": "creativetim",
+  "description": "FOTD Dashboard",
+  "author": "Developer@FOTD",
   "private": true,
   "scripts": {
     "dev": "nuxt",

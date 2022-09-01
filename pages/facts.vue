@@ -79,7 +79,7 @@
         } else {
           this.factsTableData = this.storedTableData;
           this.factsTableData = this.factsTableData.filter(row => {
-            const factId = row.factId.toString().toLowerCase();
+            const factId = row.fact_id.toString().toLowerCase();
             const fact = row.fact.toLowerCase();
             const searchTerm = this.filter.toLowerCase();
             return fact.includes(searchTerm) || factId.includes(searchTerm) ;

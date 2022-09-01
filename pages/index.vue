@@ -43,13 +43,6 @@
             label="Popularity"
             property="popularity"
           ></el-table-column>
-          <tbody>
-           <tr v-for="user in searchUsers()">
-            <td>{{user.UserId}}</td>
-            <td>{{user.Name}}</td>
-            <td>{{user.Email}}</td>
-           </tr>
-          </tbody>
         </el-table>
       </card>
     </div>

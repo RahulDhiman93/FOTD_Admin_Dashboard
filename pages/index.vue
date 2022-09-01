@@ -8,20 +8,18 @@
         </div>
         <el-table :data="usersTableData">
           <el-table-column
-            min-width="60"
+            min-width="65"
             sortable
             label="UserId"
             property="user_id"
           ></el-table-column>
           <el-table-column
             min-width="150"
-            sortable
             label="Name"
             property="name"
           ></el-table-column>
           <el-table-column
             min-width="170"
-            sortable
             label="Email"
             property="email"
           ></el-table-column>

@@ -43,6 +43,11 @@
             label="Popularity"
             property="popularity"
           ></el-table-column>
+          <el-table-column
+            min-width="100"
+            label="LL"
+            property="last_login"
+          ></el-table-column>
         </el-table>
       </card>
     </div>

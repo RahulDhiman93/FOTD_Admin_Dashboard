@@ -1,9 +1,15 @@
 <template>
   <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-10">
       <card card-body-classes="table-full-width">
-        <h4 slot="header" class="card-title">Striped table</h4>
-        <el-table :data="tableData">
+        <h4 slot="header" class="card-title">All Users</h4>
+        <el-table :data="usersTableData">
+          <el-table-column
+            min-width="150"
+            sortable
+            label="UserId"
+            property="user_id"
+          ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
@@ -13,22 +19,26 @@
           <el-table-column
             min-width="150"
             sortable
-            label="Country"
-            property="country"
+            label="Email"
+            property="email"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="City"
-            property="city"
+            label="Source"
+            property="signup_from"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            align="right"
-            header-align="right"
-            label="Salary"
-            property="salary"
+            label="Rewards"
+            property="reward_points"
+          ></el-table-column>
+          <el-table-column
+            min-width="150"
+            sortable
+            label="Popularity"
+            property="popularity"
           ></el-table-column>
         </el-table>
       </card>
@@ -48,43 +58,7 @@ export default {
   },
   data () {
     return {
-      tableData: [
-        {
-          id: 1,
-          name: 'Dakota Rice',
-          salary: '$36.738',
-          country: 'Niger',
-          city: 'Oud-Turnhout'
-        },
-        {
-          id: 2,
-          name: 'Minerva Hooper',
-          salary: '$23,789',
-          country: 'Curaçao',
-          city: 'Sinaai-Waas'
-        },
-        {
-          id: 3,
-          name: 'Sage Rodriguez',
-          salary: '$56,142',
-          country: 'Netherlands',
-          city: 'Baileux'
-        },
-        {
-          id: 4,
-          name: 'Philip Chaney',
-          salary: '$38,735',
-          country: 'Korea, South',
-          city: 'Overland Park'
-        },
-        {
-          id: 5,
-          name: 'Doris Greene',
-          salary: '$63,542',
-          country: 'Malawi',
-          city: 'Feldkirchen in Kärnten'
-        }
-      ]
+      usersTableData: [],
     };
   },
   computed: {
@@ -93,25 +67,19 @@ export default {
     },
     isRTL () {
       return this.$rtl.isRTL;
-    },
-    bigLineChartCategories () {
-      return [{ name: 'Accounts', icon: 'tim-icons icon-single-02' }, {
-        name: 'Purchases',
-        icon: 'tim-icons icon-gift-2'
-      }, { name: 'Sessions', icon: 'tim-icons icon-tap-02' }];
     }
   },
   methods: {
-    fetchData() {
+    fetchAllUsers() {
       fetch(config.BASE_URL + "getAllUsers")
         .then(response => response.json())
         .then(data => {
-          console.log(data);
+          this.usersTableData = data
         })
     }
   },
   mounted () {
-    this.fetchData();
+    this.fetchAllUsers();
   }
 }
 </script>

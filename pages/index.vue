@@ -101,4 +101,9 @@ export default {
   }
 }
 </script>
-<style></style>
+<style>
+  .el-table {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+</style>

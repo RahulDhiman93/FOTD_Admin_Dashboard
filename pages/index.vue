@@ -65,12 +65,11 @@ export default {
     };
   },
   methods: {
-    fetchAllUsers() {
+    async fetchAllUsers() {
       fetch(config.BASE_URL + "getAllUsers")
         .then(response => response.json())
         .then(data => {
-          this.usersTableData = data
-          this.$forceUpdate();
+          this.usersTableData = await data
         })
     }
   }

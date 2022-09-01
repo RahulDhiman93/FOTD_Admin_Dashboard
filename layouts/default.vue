@@ -9,7 +9,7 @@
       <template slot-scope="props" slot="links">
         <sidebar-item
           :link="{
-            name: $t('sidebar.dashboard'),
+            name: $t('sidebar.allUsers'),
             icon: 'tim-icons icon-chart-pie-36',
             path: '/'
           }"

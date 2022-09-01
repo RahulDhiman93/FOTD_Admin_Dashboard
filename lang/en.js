@@ -2,6 +2,7 @@ module.exports = {
   "sidebar": {
     "title": "Creative Tim",
     "shortTitle": "CT",
+    "allUsers" : "FOTD Users",
     "dashboard": "Dashboard",
     "pages": "Pages",
     "pricing": "Pricing",

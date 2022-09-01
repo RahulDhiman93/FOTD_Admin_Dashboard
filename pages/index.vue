@@ -41,6 +41,9 @@
             property="popularity"
           ></el-table-column>
         </el-table>
+        <input type="text"
+         placeholder="Search any user"
+         v-model="filter" />
       </card>
     </div>
   </div>

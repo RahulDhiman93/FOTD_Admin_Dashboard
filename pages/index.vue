@@ -31,12 +31,12 @@
             property="signup_from"
           ></el-table-column>
           <el-table-column
-            min-width="70"
+            min-width="60"
             label="Rewards"
             property="reward_points"
           ></el-table-column>
           <el-table-column
-            min-width="90"
+            min-width="80"
             label="Popularity"
             property="popularity"
           ></el-table-column>

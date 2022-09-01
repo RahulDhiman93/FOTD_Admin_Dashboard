@@ -5,37 +5,37 @@
         <h4 slot="header" class="card-title">All Users</h4>
         <el-table :data="usersTableData">
           <el-table-column
-            min-width="50"
+            min-width="60"
             sortable
             label="UserId"
             property="user_id"
           ></el-table-column>
           <el-table-column
-            min-width="200"
+            min-width="180"
             sortable
             label="Name"
             property="name"
           ></el-table-column>
           <el-table-column
-            min-width="200"
+            min-width="180"
             sortable
             label="Email"
             property="email"
           ></el-table-column>
           <el-table-column
-            min-width="50"
+            min-width="60"
             sortable
             label="Source"
             property="signup_from"
           ></el-table-column>
           <el-table-column
-            min-width="50"
+            min-width="60"
             sortable
             label="Rewards"
             property="reward_points"
           ></el-table-column>
           <el-table-column
-            min-width="50"
+            min-width="60"
             sortable
             label="Popularity"
             property="popularity"
@@ -64,21 +64,14 @@ export default {
       usersTableData: [],
     };
   },
-  computed: {
-    enableRTL () {
-      return this.$route.query.enableRTL;
-    },
-    isRTL () {
-      return this.$rtl.isRTL;
-    }
-  },
   methods: {
     fetchAllUsers() {
       fetch(config.BASE_URL + "getAllUsers")
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data
-        })
+          this.$forceUpdate();
+        }).bind(this);
     }
   }
 }

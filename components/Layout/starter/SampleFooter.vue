@@ -30,7 +30,7 @@
           href="https://www.creative-tim.com/?ref=pdf-vuejs"
           target="_blank"
           rel="noopener"
-        >Creative Tim</a
+        >Fact of the day</a
         >
         for a better web.
       </div>

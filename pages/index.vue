@@ -11,7 +11,7 @@
             property="user_id"
           ></el-table-column>
           <el-table-column
-            min-width="170"
+            min-width="150"
             sortable
             label="Name"
             property="name"
@@ -35,7 +35,7 @@
             property="reward_points"
           ></el-table-column>
           <el-table-column
-            min-width="70"
+            min-width="90"
             sortable
             label="Popularity"
             property="popularity"
@@ -69,11 +69,7 @@ export default {
       fetch(config.BASE_URL + "getAllUsers")
         .then(response => response.json())
         .then(data => {
-          this.usersTableData = data.data
-          console.log("FETCH USER DATA--->");
-          console.log(data);
-          console.log("FETCH USER TABLE DATA--->");
-          console.log(this.usersTableData);
+          this.usersTableData = data.data;
         })
     }
   }

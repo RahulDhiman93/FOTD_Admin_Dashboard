@@ -70,6 +70,9 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data
+          console.log("FETCH USER DATA--->");
+          console.log(data);
+          console.log("FETCH USER TABLE DATA--->");
           console.log(this.usersTableData);
         })
     }

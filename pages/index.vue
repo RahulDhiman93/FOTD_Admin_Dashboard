@@ -27,25 +27,22 @@
           ></el-table-column>
           <el-table-column
             min-width="60"
-            sortable
             label="Source"
             property="signup_from"
           ></el-table-column>
           <el-table-column
             min-width="70"
-            sortable
             label="Rewards"
             property="reward_points"
           ></el-table-column>
           <el-table-column
             min-width="90"
-            sortable
             label="Popularity"
             property="popularity"
           ></el-table-column>
           <el-table-column
             min-width="100"
-            label="LL"
+            label="Last Login"
             property="last_login"
           ></el-table-column>
         </el-table>
@@ -101,9 +98,4 @@ export default {
   }
 }
 </script>
-<style>
-  .el-table {
-  overflow-y: auto;
-  overflow-x: auto;
-}
-</style>
+<style></style>

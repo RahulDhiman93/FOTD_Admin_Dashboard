@@ -3,6 +3,11 @@
     <div class="col-lg-13">
       <card card-body-classes="table-full-width">
         <h4 slot="header" class="card-title">All Users</h4>
+        <div class="col-lg-7">
+          <input type="text"
+         placeholder="Search any user"
+         v-model="filter" />
+        </div>
         <el-table :data="usersTableData">
           <el-table-column
             min-width="60"
@@ -41,9 +46,6 @@
             property="popularity"
           ></el-table-column>
         </el-table>
-        <input type="text"
-         placeholder="Search any user"
-         v-model="filter" />
       </card>
     </div>
   </div>

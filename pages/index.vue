@@ -69,7 +69,7 @@ export default {
       fetch(config.BASE_URL + "getAllUsers")
         .then(response => response.json())
         .then(data => {
-          this.usersTableData = data
+          this.usersTableData = data.data
           console.log("FETCH USER DATA--->");
           console.log(data);
           console.log("FETCH USER TABLE DATA--->");

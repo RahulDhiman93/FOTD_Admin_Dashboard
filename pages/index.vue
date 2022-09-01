@@ -71,7 +71,7 @@ export default {
         .then(data => {
           this.usersTableData = data
           this.$forceUpdate();
-        }).bind(this);
+        })
     }
   }
 }

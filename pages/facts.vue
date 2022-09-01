@@ -26,7 +26,7 @@
               property="user_id"
             ></el-table-column>
             <el-table-column
-              min-width="180"
+              min-width="100"
               label="Fact"
               property="fact"
             ></el-table-column>
@@ -35,6 +35,12 @@
               sortable
               label="Fact Type"
               property="fact_type"
+            ></el-table-column>
+            <el-table-column
+              min-width="65"
+              sortable
+              label="FOTD Date"
+              property="fact_stamp"
             ></el-table-column>
           </el-table>
         </card>

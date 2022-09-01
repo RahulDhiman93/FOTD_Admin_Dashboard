@@ -227,8 +227,7 @@ export default {
     ContentFooter,
     DashboardContent,
     SlideYDownTransition,
-    ZoomCenterTransition,
-    SidebarShare
+    ZoomCenterTransition
   },
   data() {
     return {

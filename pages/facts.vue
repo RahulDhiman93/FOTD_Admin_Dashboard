@@ -38,7 +38,6 @@
             ></el-table-column>
             <el-table-column
               min-width="65"
-              sortable
               label="FOTD Date"
               property="fact_stamp"
             ></el-table-column>

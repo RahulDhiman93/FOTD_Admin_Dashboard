@@ -11,13 +11,13 @@
             property="user_id"
           ></el-table-column>
           <el-table-column
-            min-width="180"
+            min-width="170"
             sortable
             label="Name"
             property="name"
           ></el-table-column>
           <el-table-column
-            min-width="180"
+            min-width="170"
             sortable
             label="Email"
             property="email"
@@ -29,13 +29,13 @@
             property="signup_from"
           ></el-table-column>
           <el-table-column
-            min-width="60"
+            min-width="70"
             sortable
             label="Rewards"
             property="reward_points"
           ></el-table-column>
           <el-table-column
-            min-width="60"
+            min-width="70"
             sortable
             label="Popularity"
             property="popularity"

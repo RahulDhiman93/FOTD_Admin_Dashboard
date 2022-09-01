@@ -10,8 +10,16 @@
         <sidebar-item
           :link="{
             name: $t('sidebar.allUsers'),
-            icon: 'tim-icons icon-chart-pie-36',
+            icon: 'tim-icons icon-single-02',
             path: '/'
+          }"
+        >
+        </sidebar-item>
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.allFacts'),
+            icon: 'tim-icons icon-align-center',
+            path: '/facts'
           }"
         >
         </sidebar-item>

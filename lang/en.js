@@ -3,6 +3,7 @@ module.exports = {
     "title": "Fact of the day",
     "shortTitle": "CT",
     "allUsers" : "FOTD Users",
+    "allFacts" : "All Facts",
     "dashboard": "Dashboard",
     "pages": "Pages",
     "pricing": "Pricing",

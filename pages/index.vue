@@ -65,7 +65,8 @@ export default {
   data () {
     return {
       filter : "",
-      usersTableData: []
+      usersTableData: [],
+      storedTableData: []
     };
   },
   methods: {
@@ -74,17 +75,23 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data.data;
+          this.storedTableData = data.data;
         })
       }
   },
   computed: {
     searchUsers() {
-     this.usersTableData = this.usersTableData.filter(row => {
-       const name = row.name.toLowerCase();
-       const email = row.email.toLowerCase();
-       const searchTerm = this.filter.toLowerCase();
-       return email.includes(searchTerm) || name.includes(searchTerm);
-     });
+      if (this.filter == "") {
+        this.usersTableData = this.storedTableData;
+      } else {
+        this.usersTableData = this.storedTableData;
+        this.usersTableData = this.usersTableData.filter(row => {
+          const name = row.name.toLowerCase();
+          const email = row.email.toLowerCase();
+          const searchTerm = this.filter.toLowerCase();
+          return email.includes(searchTerm) || name.includes(searchTerm);
+        });
+      }
     }
   }
 }

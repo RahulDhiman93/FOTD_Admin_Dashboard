@@ -97,7 +97,7 @@ export default {
 }
 </script>
 <style>
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+.el-table-column {
    background-color: red;
 }
 </style>

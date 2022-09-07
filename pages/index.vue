@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-13">
       <card card-body-classes="table-full-width">
-        <h4 slot="header" class="card-title">All Users</h4>
+        <h4 slot="header" class="card-title">Users</h4>
         <div class="col-lg-10">
           <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers"/>
         </div>
@@ -96,8 +96,4 @@ export default {
   }
 }
 </script>
-<style>
-.el-table-column {
-   background-color: red;
-}
-</style>
+<style></style>

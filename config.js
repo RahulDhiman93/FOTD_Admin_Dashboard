@@ -14,5 +14,5 @@ export default {
     purpleGradient: ['rgba(253,93,147,0.8)', 'rgba(253,93,147,0)']
   },
   MAPS_API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY',
-  BASE_URL: 'http://159.65.145.163:8000/'
+  BASE_URL: 'http://152.67.10.2:8000/'
 };

@@ -7,7 +7,7 @@
             <input type="text" placeholder="Search any fact" v-model="filter" v-on:input="searchFacts"/>
           </div>
           <br></br>
-          <el-table :data="factsTableData">
+          <el-table :data="factsTableData" id="mainTable" class="table-responsive">
             <el-table-column
               min-width="65"
               sortable

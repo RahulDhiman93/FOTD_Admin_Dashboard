@@ -6,6 +6,7 @@
           <div class="col-lg-10">
             <input type="text" placeholder="Search any fact" v-model="filter" v-on:input="searchFacts"/>
           </div>
+          <br></br>
           <el-table :data="factsTableData">
             <el-table-column
               min-width="65"
@@ -111,9 +112,6 @@
     background: #344675;
   }
   #mainTable table thead tr th:nth-child(6){
-    background: #344675;
-  }
-  #mainTable table thead tr th:nth-child(7){
     background: #344675;
   }
   </style>

@@ -97,7 +97,25 @@ export default {
 }
 </script>
 <style>
-#mainTable table thead tr {
+#mainTable table thead tr th:nth-child(1){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(2){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(3){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(4){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(5){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(6){
+  background: #344675;
+}
+#mainTable table thead tr th:nth-child(7){
   background: #344675;
 }
 </style>

@@ -6,7 +6,7 @@
         <div class="col-lg-10">
           <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers"/>
         </div>
-        <el-table :data="usersTableData">
+        <el-table :data="usersTableData" id="mainTable">
           <el-table-column
             min-width="65"
             sortable
@@ -96,4 +96,8 @@ export default {
   }
 }
 </script>
-<style></style>
+<style>
+#mainTable table thead tr th:nth-child(2) {
+  background: red;
+}
+</style>

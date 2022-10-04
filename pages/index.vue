@@ -6,7 +6,7 @@
         <div class="col-lg-10">
           <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers"/>
         </div>
-        <el-table :data="usersTableData" id="mainTable">
+        <el-table :data="usersTableData" class="table-responsive">
           <el-table-column
             min-width="65"
             sortable

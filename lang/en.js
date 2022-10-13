@@ -2,6 +2,7 @@ module.exports = {
   "sidebar": {
     "title": "Fact of the day",
     "shortTitle": "CT",
+    "adminLogin" : "Admin Login",
     "allUsers" : "FOTD Users",
     "allFacts" : "All Facts",
     "dashboard": "Dashboard",

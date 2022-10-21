@@ -11,7 +11,7 @@
           :link="{
             name: $t('sidebar.allUsers'),
             icon: 'tim-icons icon-single-02',
-            path: '/users'
+            path: '/'
           }"
         >
         </sidebar-item>

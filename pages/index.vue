@@ -3,8 +3,8 @@
     <div class="col-lg-13">
       <card card-body-classes="table-full-width">
         <h4 slot="header" class="card-title">Users</h4>
-        <div class="col-lg-10">
-          <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers"/>
+        <div class="col-lg-10" style="display: flex; justify-content: space-between;">
+          <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers" style="width: 100%; margin-right: 20px;"/>
           <div>
             <button @click="fetchAllUsers">Reload</button>
           </div>

@@ -5,6 +5,9 @@
         <h4 slot="header" class="card-title">Users</h4>
         <div class="col-lg-10">
           <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers"/>
+          <div>
+            <button @click="fetchAllUsers">Reload</button>
+          </div>
         </div>
         <br>
         <el-table :data="usersTableData" id="mainTable" class="table-responsive">

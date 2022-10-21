@@ -3,8 +3,11 @@
       <div class="col-lg-13">
         <card card-body-classes="table-full-width">
           <h4 slot="header" class="card-title">All Facts</h4>
-          <div class="col-lg-10">
-            <input type="text" placeholder="Search any fact" v-model="filter" v-on:input="searchFacts"/>
+          <div class="col-lg-10" style="display: flex; justify-content: space-between;">
+          <input type="text" placeholder="Search any fact" v-model="filter" v-on:input="searchFacts" style="width: 100%; margin-right: 20px;"/>
+          <div>
+            <button @click="fetchAllFacts">Reload</button>
+          </div>
           </div>
           <br>
           <el-table :data="factsTableData" id="mainTable" class="table-responsive">

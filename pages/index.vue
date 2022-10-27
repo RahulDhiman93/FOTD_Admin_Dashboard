@@ -99,19 +99,10 @@ export default {
         })
       },
       handleScroll(event) {
-        console.log("EVENT & TARGET");
-        console.log(event);
-        console.log(event.target);
-        console.log("EVENT VALUES");
-        console.log(event.target.scrollingElement.offsetHeight);
-        console.log(event.target.scrollingElement.scrollTop);
-        console.log(event.target.scrollingElement.scrollHeight);
         if((event.target.scrollingElement.offsetHeight + event.target.scrollingElement.scrollTop) >= event.target.scrollingElement.scrollHeight) {
-          console.log("INSIDE IF FOR SCROLL");
             if (!this.isBusy) {
-              console.log("INSIDE IF FOR SCROLL NOT BUSY");
                 this.skip += this.limit;
-                this.fetchAllUsers(limit, skip, 0);
+                this.fetchAllUsers(this.limit, this.skip, 0);
             }
         }
       }

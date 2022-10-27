@@ -64,27 +64,44 @@ export default {
     [TableColumn.name]: TableColumn
   },
   async created() {
-    await this.fetchAllUsers(this.limit, this.skip);
+    await this.fetchAllUsers(this.limit, this.skip, 1);
+    window.addEventListener('scrollUsers', this.handleScroll);
+  },
+  async destroyed () {
+    window.removeEventListener('scrollUsers', this.handleScroll);
   },
   data () {
     return {
       filter : "",
-      limit : 30,
+      limit : 50,
       skip : 0,
       usersTableData: [],
       storedTableData: []
     };
   },
   methods: {
-    fetchAllUsers(limit, skip) {
+    fetchAllUsers(limit, skip, isInitialLoad) {
       let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
       console.log(getUserApi);
       fetch(getUserApi)
         .then(response => response.json())
         .then(data => {
-          this.usersTableData = data.data;
-          this.storedTableData = data.data;
+          if (isInitialLoad == 1){
+            this.usersTableData = data.data;
+            this.storedTableData = data.data;
+          } else {
+            this.usersTableData.push(data.data);
+            this.storedTableData.push(data.data);
+          }
         })
+      },
+      handleScroll() {
+        let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
+        if (bottomOfWindow) {
+          this.skip += this.limit;
+          this.fetchAllUsers(limit, skip, 0);
+        }
       }
   },
   computed: {
@@ -105,6 +122,7 @@ export default {
     }
   }
 }
+
 </script>
 <style>
 #mainTable table thead tr th:nth-child(1){

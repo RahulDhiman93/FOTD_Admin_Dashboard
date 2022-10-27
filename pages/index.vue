@@ -75,17 +75,20 @@ export default {
       filter : "",
       limit : 50,
       skip : 0,
+      isBusy : false,
       usersTableData: [],
       storedTableData: []
     };
   },
   methods: {
     fetchAllUsers(limit, skip, isInitialLoad) {
+      this.isBusy = true;
       let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
       console.log(getUserApi);
       fetch(getUserApi)
         .then(response => response.json())
         .then(data => {
+          this.isBusy = false;
           if (isInitialLoad == 1){
             this.usersTableData = data.data;
             this.storedTableData = data.data;
@@ -95,12 +98,15 @@ export default {
           }
         })
       },
-      handleScroll() {
-        let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
-
-        if (bottomOfWindow) {
-          this.skip += this.limit;
-          this.fetchAllUsers(limit, skip, 0);
+      handleScroll(event) {
+      if (
+        event.target.scrollTop + event.target.clientHeight >=
+        event.target.scrollHeight
+      ) {
+         if (!this.isBusy) {
+           this.skip += this.limit;
+           this.fetchAllUsers(limit, skip, 0);
+         }
         }
       }
   },

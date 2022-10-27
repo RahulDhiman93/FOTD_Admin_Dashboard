@@ -65,10 +65,10 @@ export default {
   },
   async created() {
     await this.fetchAllUsers(this.limit, this.skip, 1);
-    window.addEventListener('scrollUsers', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   },
-  async destroyed () {
-    window.removeEventListener('scrollUsers', this.handleScroll);
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   data () {
     return {

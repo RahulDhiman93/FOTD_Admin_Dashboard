@@ -64,7 +64,7 @@ export default {
     [TableColumn.name]: TableColumn
   },
   async created() {
-    await this.fetchAllUsers();
+    await this.fetchAllUsers(this.limit, this.skip);
   },
   data () {
     return {
@@ -76,8 +76,8 @@ export default {
     };
   },
   methods: {
-    fetchAllUsers() {
-      fetch(config.BASE_URL + "getAllUsers?limit=${limit}&offset=${skip}")
+    fetchAllUsers(limit, skip) {
+      fetch(config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString + "&offset=" + skip.toString)
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data.data;

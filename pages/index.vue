@@ -65,10 +65,12 @@ export default {
   },
   async created() {
     await this.fetchAllUsers(this.limit, this.skip, 1);
-    window.addEventListener('scroll', this.handleScroll);
+    const tableScrollBody = this.$refs["mainTable"].$el
+    tableScrollBody.addEventListener("scroll", this.handleScroll);
   },
   destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
+    const tableScrollBody = this.$refs["mainTable"].$el
+    tableScrollBody.removeEventListener('scroll', this.handleScroll);
   },
   data () {
     return {
@@ -99,18 +101,18 @@ export default {
         })
       },
       handleScroll(event) {
-        console.log("INSIDE EVENT FOR SCROLL");
-      if (
-        event.target.scrollTop + event.target.clientHeight >=
-        event.target.scrollHeight
-      ) {
-        console.log("INSIDE IF FOR SCROLL");
-         if (!this.isBusy) {
-          console.log("INSIDE IF FOR SCROLL NOT BUSY");
-           this.skip += this.limit;
-           this.fetchAllUsers(limit, skip, 0);
-         }
-        }
+        console.log("INSIDE MAIN FOR SCROLL");
+       if (
+          event.target.scrollTop + event.target.clientHeight >=
+          event.target.scrollHeight
+       ) {
+          console.log("INSIDE IF FOR SCROLL");
+            if (!this.isBusy) {
+              console.log("INSIDE IF FOR SCROLL NOT BUSY");
+                this.skip += this.limit;
+                this.fetchAllUsers(limit, skip, 0);
+            }
+         } 
       }
   },
   computed: {

@@ -90,7 +90,7 @@ export default {
       } else {
         this.usersTableData = this.storedTableData;
         this.usersTableData = this.usersTableData.filter(row => {
-          const userId = row.user_id.toLowerCase();
+          const userId = row.user_id.toString().toLowerCase();
           const name = row.name.toLowerCase();
           const email = row.email.toLowerCase();
           const accessToken = row.access_token.toLowerCase();

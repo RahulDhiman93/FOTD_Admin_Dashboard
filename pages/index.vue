@@ -99,11 +99,14 @@ export default {
         })
       },
       handleScroll(event) {
+        console.log("INSIDE EVENT FOR SCROLL");
       if (
         event.target.scrollTop + event.target.clientHeight >=
         event.target.scrollHeight
       ) {
+        console.log("INSIDE IF FOR SCROLL");
          if (!this.isBusy) {
+          console.log("INSIDE IF FOR SCROLL NOT BUSY");
            this.skip += this.limit;
            this.fetchAllUsers(limit, skip, 0);
          }

@@ -18,7 +18,7 @@
             property="user_id"
           ></el-table-column>
           <el-table-column
-            min-width="150"
+            min-width="100"
             label="Name"
             property="name"
           ></el-table-column>
@@ -43,9 +43,9 @@
             property="popularity"
           ></el-table-column>
           <el-table-column
-            min-width="100"
-            label="Last Login"
-            property="last_login"
+            min-width="150"
+            label="AccessToken"
+            property="access_token"
           ></el-table-column>
         </el-table>
       </card>
@@ -90,10 +90,12 @@ export default {
       } else {
         this.usersTableData = this.storedTableData;
         this.usersTableData = this.usersTableData.filter(row => {
+          const userId = row.user_id;
           const name = row.name.toLowerCase();
           const email = row.email.toLowerCase();
+          const accessToken = row.access_token.toLowerCase();
           const searchTerm = this.filter.toLowerCase();
-          return email.includes(searchTerm) || name.includes(searchTerm);
+          return userId.includes(searchTerm) || email.includes(searchTerm) || name.includes(searchTerm) || accessToken.includes(searchTerm);
         });
       }
     }

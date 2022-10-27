@@ -69,13 +69,15 @@ export default {
   data () {
     return {
       filter : "",
+      limit : 30,
+      skip : 0,
       usersTableData: [],
       storedTableData: []
     };
   },
   methods: {
     fetchAllUsers() {
-      fetch(config.BASE_URL + "getAllUsers")
+      fetch(config.BASE_URL + "getAllUsers?limit=$limit&offset=$skip)")
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data.data;

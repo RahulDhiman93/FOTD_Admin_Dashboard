@@ -6,7 +6,13 @@
         <div class="col-lg-10" style="display: flex; justify-content: space-between;">
           <input type="text" placeholder="Search any user" v-model="filter" v-on:input="searchUsers" style="width: 100%; margin-right: 20px;"/>
           <div>
-            <button @click="fetchAllUsers">Reload</button>
+            <button @click="refresh">Reload</button>
+          </div>
+          <div>
+            <button @click="backLoad">Previous</button>
+          </div>
+          <div>
+            <button @click="nextLoad">Next</button>
           </div>
         </div>
         <br>
@@ -64,7 +70,7 @@ export default {
     [TableColumn.name]: TableColumn
   },
   async created() {
-    await this.fetchAllUsers(this.limit, this.skip, 1);
+    await this.fetchAllUsers(this.limit, this.skip);
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed () {
@@ -81,7 +87,7 @@ export default {
     };
   },
   methods: {
-    fetchAllUsers(limit, skip, isInitialLoad) {
+    fetchAllUsers(limit, skip) {
       this.isBusy = true;
       let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
       console.log(getUserApi);
@@ -89,22 +95,22 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.isBusy = false;
-          if (isInitialLoad == 1){
-            this.usersTableData = data.data;
-            this.storedTableData = data.data;
-          } else {
-            this.usersTableData.push(data.data);
-            this.storedTableData.push(data.data);
-          }
+          this.usersTableData = data.data;
+          this.storedTableData = data.data;
         })
       },
-      handleScroll(event) {
-        if((event.target.scrollingElement.offsetHeight + event.target.scrollingElement.scrollTop) >= event.target.scrollingElement.scrollHeight) {
-            if (!this.isBusy) {
-                this.skip += this.limit;
-                this.fetchAllUsers(this.limit, this.skip, 0);
-            }
-        }
+      refresh() {
+        this.skip = 0
+        this.fetchAllUsers(this.limit, this.skip);
+      },
+      backLoad() {
+        let newSkip = (this.skip - 50 < 0) ? 0 : (this.skip - 50);
+        this.skip = newSkip
+        this.fetchAllUsers(this.limit, this.skip);
+      },
+      nextLoad() {
+        this.skip = this.skip + 50;
+        this.fetchAllUsers(this.limit, this.skip);
       }
   },
   computed: {

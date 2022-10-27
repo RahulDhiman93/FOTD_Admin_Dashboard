@@ -99,8 +99,11 @@ export default {
         })
       },
       handleScroll(event) {
-        let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight;
-        if (bottomOfWindow) {
+        console.log("EVENT VALUES");
+        console.log(event.target.offsetHeight);
+        console.log(event.target.scrollTop);
+        console.log(event.target.scrollHeight);
+        if((event.target.offsetHeight + event.target.scrollTop) >= event.target.scrollHeight) {
           console.log("INSIDE IF FOR SCROLL");
             if (!this.isBusy) {
               console.log("INSIDE IF FOR SCROLL NOT BUSY");

@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     fetchAllUsers(limit, skip) {
-      let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString + "&offset=" + skip.toString;
+      let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
       console.log(getUserApi);
       fetch(getUserApi)
         .then(response => response.json())

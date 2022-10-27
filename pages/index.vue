@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     fetchAllUsers() {
-      fetch(config.BASE_URL + "getAllUsers?limit=$limit&offset=$skip)")
+      fetch(config.BASE_URL + "getAllUsers?limit=${limit}&offset=${skip}")
         .then(response => response.json())
         .then(data => {
           this.usersTableData = data.data;

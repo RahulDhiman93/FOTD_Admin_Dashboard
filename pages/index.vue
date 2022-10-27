@@ -99,6 +99,9 @@ export default {
         })
       },
       handleScroll(event) {
+        console.log("EVENT & TARGET");
+        console.log(event);
+        console.log(event.target);
         console.log("EVENT VALUES");
         console.log(event.target.offsetHeight);
         console.log(event.target.scrollTop);

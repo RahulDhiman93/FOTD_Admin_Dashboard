@@ -6,7 +6,13 @@
           <div class="col-lg-10" style="display: flex; justify-content: space-between;">
           <input type="text" placeholder="Search any fact" v-model="filter" v-on:input="searchFacts" style="width: 100%; margin-right: 20px;"/>
           <div>
-            <button @click="fetchAllFacts">Reload</button>
+            <button @click="refresh">Reload</button>
+          </div>
+          <div>
+            <button @click="backLoad">Previous</button>
+          </div>
+          <div>
+            <button @click="nextLoad">Next</button>
           </div>
           </div>
           <br>
@@ -62,24 +68,43 @@
       [TableColumn.name]: TableColumn
     },
     async created() {
-      await this.fetchAllFacts();
+      await this.fetchAllFacts(this.limit, this.skip);
     },
     data () {
       return {
         filter : "",
+        limit : 50,
+        skip : 0,
+        isBusy : false,
         factsTableData: [],
         storedTableData: []
       };
     },
     methods: {
-     fetchAllFacts() {
-        fetch(config.BASE_URL + "getAllFacts")
+     fetchAllFacts(limit, skip) {
+        this.isBusy = true;
+        let getFactsApi = config.BASE_URL + "getAllFacts?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
+        fetch(getFactsApi)
           .then(response => response.json())
           .then(data => {
+            this.isBusy = false;
             this.factsTableData = data.data;
             this.storedTableData = data.data;
           })
-        }
+        },
+      refresh() {
+        this.skip = 0
+        this.fetchAllFacts(this.limit, this.skip);
+      },
+      backLoad() {
+        let newSkip = (this.skip - 50 < 0) ? 0 : (this.skip - 50);
+        this.skip = newSkip
+        this.fetchAllFacts(this.limit, this.skip);
+      },
+      nextLoad() {
+        this.skip = this.skip + 50;
+        this.fetchAllFacts(this.limit, this.skip);
+      }
     },
     computed: {
       searchFacts() {

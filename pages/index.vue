@@ -71,10 +71,6 @@ export default {
   },
   async created() {
     await this.fetchAllUsers(this.limit, this.skip);
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
   },
   data () {
     return {
@@ -90,7 +86,6 @@ export default {
     fetchAllUsers(limit, skip) {
       this.isBusy = true;
       let getUserApi = config.BASE_URL + "getAllUsers?" + "limit=" + limit.toString() + "&offset=" + skip.toString();
-      console.log(getUserApi);
       fetch(getUserApi)
         .then(response => response.json())
         .then(data => {

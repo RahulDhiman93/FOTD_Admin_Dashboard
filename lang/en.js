@@ -5,6 +5,7 @@ module.exports = {
     "adminLogin" : "Admin Login",
     "allUsers" : "FOTD Users",
     "allFacts" : "All Facts",
+    "allFeedbacks" : "All Feebacks",
     "dashboard": "Dashboard",
     "pages": "Pages",
     "pricing": "Pricing",

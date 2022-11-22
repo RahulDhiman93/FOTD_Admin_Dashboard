@@ -18,36 +18,36 @@
           <br>
           <el-table :data="factsTableData" id="mainTable" class="table-responsive">
             <el-table-column
-              min-width="65"
+              min-width="50"
               sortable
               label="Fact Id"
               property="fact_id"
             ></el-table-column>
             <el-table-column
-              min-width="65"
+              min-width="50"
               sortable
               label="Fact Status"
               property="fact_status"
             ></el-table-column>
             <el-table-column
-              min-width="65"
+              min-width="50"
               sortable
               label="User Id"
               property="user_id"
             ></el-table-column>
             <el-table-column
-              min-width="100"
+              min-width="145"
               label="Fact"
               property="fact"
             ></el-table-column>
             <el-table-column
-              min-width="65"
+              min-width="50"
               sortable
               label="Fact Type"
               property="fact_type"
             ></el-table-column>
             <el-table-column
-              min-width="65"
+              min-width="80"
               label="FOTD Date"
               property="fact_stamp"
             ></el-table-column>

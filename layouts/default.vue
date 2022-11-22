@@ -23,6 +23,14 @@
           }"
         >
         </sidebar-item>
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.allFacts'),
+            icon: 'tim-icons icon-align-center',
+            path: '/feedbacks'
+          }"
+        >
+        </sidebar-item>
       </template>
     </side-bar>
     <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->

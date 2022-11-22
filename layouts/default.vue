@@ -25,7 +25,7 @@
         </sidebar-item>
         <sidebar-item
           :link="{
-            name: $t('sidebar.allFacts'),
+            name: $t('sidebar.allFeedbacks'),
             icon: 'tim-icons icon-align-center',
             path: '/feedbacks'
           }"

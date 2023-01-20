@@ -6,6 +6,7 @@ module.exports = {
     "allUsers" : "FOTD Users",
     "allFacts" : "All Facts",
     "allFeedbacks" : "All Feebacks",
+    "allComments"  : "All Comments",
     "dashboard": "Dashboard",
     "pages": "Pages",
     "pricing": "Pricing",

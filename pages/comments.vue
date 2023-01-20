@@ -107,7 +107,7 @@
       }
     },
     computed: {
-      searchFacts() {
+     searchComments() {
         if (this.filter == "") {
           this.commentsTableData = this.storedTableData;
         } else {
